@@ -11,9 +11,28 @@ export const navigation = [
 ];
 
 export const schedule = [
-  { time: "17:00", icon: "◇", title: "Benvenuto", description: "Arrivo degli ospiti e un primo brindisi insieme." },
-  { time: "17:30", icon: "○", title: "Cerimonia", description: "La nostra promessa, tra gli ulivi della masseria." },
-  { time: "19:00", icon: "✦", title: "Cena & festa", description: "Sapori di Puglia, musica e balli sotto le stelle." },
+  {
+    time: "Orario da definire",
+    icon: "◇",
+    title: "Celebrazione",
+    place: "Chiesetta San Michele Arcangelo",
+    description: "Contrada Frangesto · Monopoli",
+    image: "/chiesa-san-michele.jpg",
+  },
+  {
+    time: "Orario da definire",
+    icon: "○",
+    title: "Benvenuto",
+    place: "Masseria Papaperta",
+    description: "Arrivo degli ospiti e un primo brindisi insieme.",
+  },
+  {
+    time: "Orario da definire",
+    icon: "✦",
+    title: "Cena & festa",
+    place: "Masseria Papaperta",
+    description: "Sapori di Puglia, musica e balli sotto le stelle.",
+  },
 ];
 
 export const weddingDate = "2027-07-17T17:00:00+02:00";

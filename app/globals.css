@@ -132,13 +132,15 @@ h1 em { display: inline-block; color: #d1a76d; font-weight: 400; font-size: .68e
 .sectionHeading { text-align: center; }
 .sectionHeading .eyebrow { color: #d4b783; }
 .sectionHeading > p:last-child { color: rgba(255,255,255,.55); }
-.timeline { max-width: 1080px; margin: 70px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
-.timeline::before { content: ""; position: absolute; left: 16%; right: 16%; top: 58px; height: 1px; background: rgba(255,255,255,.2); }
-.timeline article { text-align: center; padding: 0 35px; position: relative; }
+.timeline { max-width: 1080px; margin: 70px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+.timeline article { text-align: center; padding: 34px 30px; position: relative; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.035); }
 .time { color: #d9bf8c; font: 500 14px "Cormorant Garamond", serif; letter-spacing: .1em; }
-.icon { width: 36px; height: 36px; margin: 14px auto 26px; display: grid; place-items: center; border-radius: 50%; color: var(--deep); background: #d2b77f; font-size: 18px; position: relative; z-index: 2; }
+.icon { width: 36px; height: 36px; margin: 14px auto 26px; display: grid; place-items: center; border-radius: 50%; color: var(--deep); background: #d2b77f; font-size: 18px; }
 .timeline h3 { font-size: 34px; }
+.timeline h4 { min-height: 42px; margin: 15px 0 4px; color: #d9bf8c; font: 500 13px/1.5 "Montserrat", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
 .timeline p { color: rgba(255,255,255,.55); font-size: 13px; }
+.timelinePhoto { height: 250px; margin: -34px -30px 28px; background-position: center 42%; background-size: cover; filter: saturate(.72) sepia(.12); }
+.photoCredit { max-width: 1080px; margin: 16px auto 0; color: rgba(255,255,255,.34); font-size: 9px; text-align: right; }
 
 .venue { display: grid; grid-template-columns: .8fr 1.2fr; padding: 0; min-height: 720px; }
 .venueCard { background: var(--terracotta); color: var(--paper); padding: 120px 8vw; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
@@ -150,15 +152,8 @@ h1 em { display: inline-block; color: #d1a76d; font-weight: 400; font-size: .68e
 .button:hover { background: var(--gold); border-color: var(--gold); }
 .button.light { border-color: rgba(255,255,255,.55); background: transparent; }
 .button.light:hover { background: white; color: var(--terracotta); }
-.venueArt { position: relative; overflow: hidden; background: linear-gradient(#b8c4bc 0 58%, #968f69 59%); }
-.moon { position: absolute; width: 140px; height: 140px; border-radius: 50%; background: #e6d7b4; top: 11%; right: 14%; }
-.horizon { position: absolute; left: 0; right: 0; bottom: 30%; height: 35%; background: #7d8469; clip-path: polygon(0 45%, 18% 30%, 36% 48%, 60% 18%, 78% 42%, 100% 25%, 100% 100%, 0 100%); }
-.masseria { position: absolute; left: 22%; bottom: 19%; width: 56%; height: 27%; background: #e9dfcd; box-shadow: inset 0 -16px rgba(171,142,101,.18); }
-.masseria::before { content: ""; position: absolute; width: 34%; height: 60%; left: 33%; top: -45%; background: #e9dfcd; border-radius: 50% 50% 0 0; }
-.masseria span { position: absolute; bottom: 0; width: 13%; height: 43%; background: #5c5b4c; border-radius: 50% 50% 0 0; }
-.masseria span:nth-child(1) { left: 15%; } .masseria span:nth-child(2) { left: 44%; } .masseria span:nth-child(3) { right: 15%; }
-.tree { position: absolute; bottom: 16%; color: #34422d; font-size: 110px; line-height: 1; text-shadow: 0 22px 0 #58442f; }
-.treeOne { left: 5%; } .treeTwo { right: 4%; transform: scale(.8); }
+.venueArt { position: relative; overflow: hidden; background: linear-gradient(rgba(38,48,33,.05), rgba(38,48,33,.2)), url("/masseria-papaperta.jpg") center/cover no-repeat; }
+.venuePhotoCredit { position: absolute; right: 18px; bottom: 14px; padding: 5px 8px; color: rgba(255,255,255,.8); background: rgba(29,37,27,.46); font-size: 9px; letter-spacing: .05em; }
 
 .rsvp { display: grid; grid-template-columns: .8fr 1.2fr; gap: 10vw; background: var(--paper); }
 .rsvpIntro { padding-top: 20px; }
@@ -195,9 +190,9 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
   .storyArt { min-height: 560px; }
   .storyCopy, .venueCard { padding: 88px 28px; }
   .venueArt { min-height: 560px; grid-row: 1; }
-  .timeline { grid-template-columns: 1fr; gap: 50px; }
-  .timeline::before { left: 50%; right: auto; top: 20px; bottom: 20px; width: 1px; height: auto; }
-  .timeline article { background: var(--deep); }
+  .timeline { grid-template-columns: 1fr; gap: 24px; }
+  .timeline article { background: rgba(255,255,255,.035); }
+  .timelinePhoto { height: 360px; }
   .rsvp { gap: 45px; }
 }
 

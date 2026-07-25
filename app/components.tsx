@@ -80,18 +80,30 @@ export function Schedule() {
       <div className="sectionHeading">
         <p className="eyebrow">Il programma</p>
         <h2>La giornata</h2>
-        <p>I dettagli definitivi saranno comunicati agli invitati più avanti.</p>
+        <p>Gli orari definitivi saranno comunicati agli invitati più avanti.</p>
       </div>
       <div className="timeline">
         {schedule.map((item) => (
-          <article key={item.time}>
+          <article className={item.image ? "timelineFeatured" : undefined} key={item.title}>
+            {item.image && (
+              <div
+                className="timelinePhoto"
+                role="img"
+                aria-label="Facciata della Chiesetta San Michele Arcangelo in Frangesto"
+                style={{ backgroundImage: `url(${item.image})` }}
+              />
+            )}
             <span className="time">{item.time}</span>
             <div className="icon">{item.icon}</div>
             <h3>{item.title}</h3>
+            <h4>{item.place}</h4>
             <p>{item.description}</p>
           </article>
         ))}
       </div>
+      <p className="photoCredit">
+        Foto chiesa: Miranda Carrieri · Comune di Monopoli · CC0
+      </p>
     </section>
   );
 }
@@ -116,12 +128,12 @@ export function Venue() {
           Apri su Google Maps ↗
         </a>
       </div>
-      <div className="venueArt" aria-label="Paesaggio pugliese stilizzato">
-        <div className="moon" />
-        <div className="horizon" />
-        <div className="masseria"><span /><span /><span /></div>
-        <div className="tree treeOne">♣</div>
-        <div className="tree treeTwo">♣</div>
+      <div
+        className="venueArt"
+        role="img"
+        aria-label="Veduta aerea di Masseria Papaperta nella campagna pugliese"
+      >
+        <span className="venuePhotoCredit">Foto: Masseria Papaperta</span>
       </div>
     </section>
   );

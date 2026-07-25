@@ -24,6 +24,8 @@ test("renders the wedding site and its primary sections", async () => {
   assert.match(html, /Ornella/);
   assert.match(html, /id="storia"/);
   assert.match(html, /id="giornata"/);
+  assert.match(html, /Chiesetta San Michele Arcangelo/);
+  assert.match(html, /Orario da definire/);
   assert.match(html, /id="luogo"/);
   assert.match(html, /id="rsvp"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
