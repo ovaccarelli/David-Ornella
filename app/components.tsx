@@ -50,30 +50,6 @@ export function Invitation() {
   );
 }
 
-export function Story() {
-  return (
-    <section className="story section" id="storia">
-      <div className="storyArt" aria-hidden="true">
-        <div className="sun" />
-        <div className="arch">
-          <span className="olive oliveOne">☙</span>
-          <span className="olive oliveTwo">❧</span>
-          <div className="archText">D <i>&amp;</i> O</div>
-        </div>
-      </div>
-      <div className="storyCopy">
-        <p className="eyebrow">La nostra storia</p>
-        <h2>Ci siamo scelti.<br />Ora scegliamo per sempre.</h2>
-        <p>
-          Il nostro viaggio ci ha portati fin qui: circondati dalle persone che amiamo, sotto il
-          cielo di Puglia. La vostra presenza renderà questo giorno davvero indimenticabile.
-        </p>
-        <div className="signature">{site.couple}</div>
-      </div>
-    </section>
-  );
-}
-
 export function Schedule() {
   return (
     <section className="schedule section" id="giornata">

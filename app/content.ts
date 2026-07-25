@@ -5,7 +5,6 @@ export const site = {
 };
 
 export const navigation = [
-  { label: "Noi", href: "#storia" },
   { label: "La giornata", href: "#giornata" },
   { label: "Il luogo", href: "#luogo" },
 ];
