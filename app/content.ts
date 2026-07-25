@@ -17,7 +17,7 @@ export const schedule = [
     title: "Celebrazione",
     place: "Chiesetta San Michele Arcangelo",
     description: "Contrada Frangesto · Monopoli",
-    image: "/chiesa-san-michele.jpg",
+    image: "/chiesa-san-michele.png",
   },
   {
     time: "Orario da definire",

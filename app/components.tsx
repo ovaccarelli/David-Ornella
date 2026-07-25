@@ -101,9 +101,6 @@ export function Schedule() {
           </article>
         ))}
       </div>
-      <p className="photoCredit">
-        Foto chiesa: Miranda Carrieri · Comune di Monopoli · CC0
-      </p>
     </section>
   );
 }
@@ -131,10 +128,8 @@ export function Venue() {
       <div
         className="venueArt"
         role="img"
-        aria-label="Veduta aerea di Masseria Papaperta nella campagna pugliese"
-      >
-        <span className="venuePhotoCredit">Foto: Masseria Papaperta</span>
-      </div>
+        aria-label="Illustrazione di Masseria Papaperta nella campagna pugliese"
+      />
     </section>
   );
 }
