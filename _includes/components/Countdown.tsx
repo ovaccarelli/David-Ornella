@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { weddingDate } from "./content";
+import { weddingDate } from "@/_data/site";
 
 const labels = { days: "giorni", hours: "ore", minutes: "minuti", seconds: "secondi" };
 

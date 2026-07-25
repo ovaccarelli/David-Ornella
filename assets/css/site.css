@@ -33,7 +33,7 @@ button, input, select, textarea { font: inherit; }
   color: var(--deep);
   background:
     linear-gradient(rgba(255,253,248,.02), rgba(38,48,33,.08)),
-    url("/og.png") center/cover no-repeat;
+    url("/assets/images/og.png") center/cover no-repeat;
 }
 .hero::before, .hero::after {
   content: "";
@@ -137,7 +137,7 @@ h1 em { display: inline-block; color: #d1a76d; font-weight: 400; font-size: .68e
 .button:hover { background: var(--gold); border-color: var(--gold); }
 .button.light { border-color: rgba(255,255,255,.55); background: transparent; }
 .button.light:hover { background: white; color: var(--terracotta); }
-.venueArt { position: relative; overflow: hidden; background: linear-gradient(rgba(38,48,33,.02), rgba(38,48,33,.12)), url("/masseria-papaperta.png") center/cover no-repeat; }
+.venueArt { position: relative; overflow: hidden; background: linear-gradient(rgba(38,48,33,.02), rgba(38,48,33,.12)), url("/assets/images/masseria-papaperta.jpg") center/cover no-repeat; }
 
 .rsvp { display: grid; grid-template-columns: .8fr 1.2fr; gap: 10vw; background: var(--paper); }
 .rsvpIntro { padding-top: 20px; }

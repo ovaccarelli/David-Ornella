@@ -5,12 +5,16 @@ Masseria Papaperta in Puglia.
 
 ## Organizzazione
 
-- `app/content.ts`: dettagli, navigazione e programma modificabili.
-- `app/components.tsx`: sezioni riutilizzabili della pagina.
-- `app/countdown.tsx` e `app/rsvp-form.tsx`: funzioni interattive.
-- `app/page.tsx`: composizione della pagina.
-- `app/globals.css`: design e stili responsive.
-- `public/`: favicon e anteprima social.
+La struttura segue le convenzioni di Jekyll, adattate al routing Next.js:
+
+- `_data/`: contenuti e dati modificabili.
+- `_includes/layouts/`: intestazione e piè di pagina.
+- `_includes/sections/`: sezioni principali del sito.
+- `_includes/components/`: componenti interattivi riutilizzabili.
+- `assets/css/`: foglio di stile del sito.
+- `public/assets/images/`: tutte le immagini, incluse favicon e anteprima social.
+- `app/`: solo i file richiesti dal framework per pagina e layout.
+- `config/`: configurazioni degli strumenti che possono essere spostate dalla root.
 
 ## Sviluppo
 

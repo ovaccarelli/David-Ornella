@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../assets/css/site.css";
 
 export const metadata: Metadata = {
   title: "David & Ornella — 17 luglio 2027",
@@ -10,17 +10,17 @@ export const metadata: Metadata = {
     description: "Una sera d'estate nel cuore della Puglia.",
     type: "website",
     locale: "it_IT",
-    images: [{ url: "/og.png", width: 1733, height: 907, alt: "David e Ornella — 17 luglio 2027" }],
+    images: [{ url: "/assets/images/og.png", width: 1733, height: 907, alt: "David e Ornella — 17 luglio 2027" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "David & Ornella — 17 luglio 2027",
     description: "Una sera d'estate nel cuore della Puglia.",
-    images: ["/og.png"],
+    images: ["/assets/images/og.png"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/assets/images/favicon.svg",
+    shortcut: "/assets/images/favicon.svg",
   },
 };
 
