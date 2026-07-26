@@ -8,8 +8,8 @@ const mapLinks: Record<string, string> = {
   "Castellana Grotte": "https://www.google.com/maps/search/?api=1&query=Castellana+Grotte",
   Alberobello: "https://www.google.com/maps/search/?api=1&query=Alberobello",
   Monopoli: "https://www.google.com/maps/search/?api=1&query=Monopoli+Puglia",
-  Bari: "https://www.google.com/maps/search/?api=1&query=Bari+Airport",
-  Brindisi: "https://www.google.com/maps/search/?api=1&query=Brindisi+Airport",
+  Bari: "https://bari.airports.aeroportidipuglia.it/acquista-il-tuo-volo/",
+  Brindisi: "https://brindisi.airports.aeroportidipuglia.it/acquista-il-tuo-volo/",
 };
 
 const rsvpLabels = new Set(["modulo RSVP", "RSVP form", "formulaire RSVP"]);
