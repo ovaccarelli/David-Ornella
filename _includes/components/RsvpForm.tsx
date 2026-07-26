@@ -16,6 +16,7 @@ export function RsvpForm() {
       `${t.rsvp.children}: ${form.get("children")}`,
       `${t.rsvp.shuttle}: ${form.get("transport")}`,
       `${t.rsvp.dietary}: ${form.get("diet") || t.rsvp.none}`,
+      `${t.rsvp.message}: ${form.get("message") || t.rsvp.none}`,
     ].join("\n");
 
     window.location.href =
@@ -56,6 +57,10 @@ export function RsvpForm() {
       <label>
         {t.rsvp.dietary}
         <textarea name="diet" rows={1} />
+      </label>
+      <label className="fullField">
+        {t.rsvp.message}
+        <textarea name="message" rows={3} placeholder={t.rsvp.messagePlaceholder} />
       </label>
       <button className="button" type="submit">{t.rsvp.submit}</button>
     </form>
