@@ -243,3 +243,43 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.rsvpHoneypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.rsvpForm button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.rsvpSuccess {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 36px 20px;
+  text-align: center;
+}
+
+.rsvpSuccess h3 {
+  margin-bottom: 16px;
+  color: var(--olive);
+  font-size: 42px;
+}
+
+.rsvpSuccess p {
+  margin-bottom: 24px;
+  color: #666153;
+}
+
+.rsvpError {
+  margin: 8px 0 0;
+  color: #963f36;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 13px;
+}
