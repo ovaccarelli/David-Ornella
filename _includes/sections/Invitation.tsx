@@ -16,6 +16,7 @@ export function Invitation() {
           <p className="eyebrow">{t.invitation.eyebrow}</p>
           <h2>{t.invitation.title}<br />{t.invitation.titleSecond}</h2>
           <p className="lead">{t.invitation.text}</p>
+          <p className="invitationDate">{t.hero.saturday} {t.date}</p>
           <Countdown />
         </div>
         <div className="photoPair photoPairRight" aria-hidden="true">
