@@ -8,10 +8,12 @@ const mapLinks: Record<string, string> = {
   "Castellana Grotte": "https://www.google.com/maps/search/?api=1&query=Castellana+Grotte",
   Alberobello: "https://www.google.com/maps/search/?api=1&query=Alberobello",
   Monopoli: "https://www.google.com/maps/search/?api=1&query=Monopoli+Puglia",
+  Bari: "https://www.google.com/maps/search/?api=1&query=Bari+Airport",
+  Brindisi: "https://www.google.com/maps/search/?api=1&query=Brindisi+Airport",
 };
 
 const rsvpLabels = new Set(["modulo RSVP", "RSVP form", "formulaire RSVP"]);
-const linkedTerms = /(Mola di Bari|Castellana Grotte|Alberobello|Monopoli|modulo RSVP|RSVP form|formulaire RSVP)/g;
+const linkedTerms = /(Mola di Bari|Castellana Grotte|Alberobello|Monopoli|Bari|Brindisi|modulo RSVP|RSVP form|formulaire RSVP)/g;
 
 function LinkedParagraph({ text }: { text: string }) {
   return (
