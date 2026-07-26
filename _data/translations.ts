@@ -14,7 +14,7 @@ export const translations = {
       ],
     },
     guide: {
-      eyebrow: "Utilità per gli ospiti", title: "Qualche consiglio per", titleSecond: "sopravvivere alla giornata", intro: "Tutto quello che serve per arrivare comodi, eleganti e affamati al punto giusto.",
+      eyebrow: "Utilità per gli ospiti", title: "Qualche consiglio", titleSecond: "", intro: "Tutto quello che serve per arrivare comodi, eleganti e affamati al punto giusto.",
       tips: [
         { title: "Dove alloggiare", text: ["Per usufruire più facilmente della possibile navetta, la soluzione più comoda è pernottare a Mola di Bari, il paese della sposa.", "Se preferite restare vicino ai luoghi del matrimonio, cercate una sistemazione a Castellana Grotte o Alberobello. Anche Monopoli è una buona alternativa; Masseria Papaperta si trova nel territorio di Castellana Grotte, vicino ad Alberobello e a pochi chilometri da Monopoli.", "Consigliamo di prenotare con anticipo: luglio è alta stagione in Puglia."] },
         { title: "Possibile navetta", text: ["Se ci sarà un numero sufficiente di richieste, organizzeremo una navetta con partenza da Mola di Bari verso la Chiesetta San Michele Arcangelo, trasferimento dalla chiesetta a Masseria Papaperta e rientro a Mola al termine della festa.", "La navetta seguirà questo percorso e probabilmente non potrà passare da altre località. Se scegliete di alloggiare altrove, considerate quindi un mezzo autonomo.", "Indicate nel modulo RSVP se siete interessati: vi confermeremo disponibilità, fermata e orari appena possibile."] },
@@ -44,7 +44,7 @@ export const translations = {
       ],
     },
     guide: {
-      eyebrow: "Useful information", title: "A few tips to", titleSecond: "survive the day", intro: "Everything you need to arrive comfortable, elegant and appropriately hungry.",
+      eyebrow: "Useful information", title: "A few tips", titleSecond: "", intro: "Everything you need to arrive comfortable, elegant and appropriately hungry.",
       tips: [
         { title: "Where to stay", text: ["For easier access to the possible shuttle, the most convenient choice is to stay in Mola di Bari, the bride’s hometown.", "To stay closer to the wedding venues, look in Castellana Grotte or Alberobello. Monopoli is also a good option; Masseria Papaperta lies within Castellana Grotte, near Alberobello and a few kilometres from Monopoli.", "We recommend booking early: July is high season in Puglia."] },
         { title: "Possible shuttle", text: ["If there is sufficient demand, we will arrange a shuttle from Mola di Bari to San Michele Arcangelo Church, then from the church to Masseria Papaperta, with a return to Mola after the party.", "The shuttle will follow this route and probably cannot stop in other towns. If you stay elsewhere, please plan for your own transport.", "Indicate your interest in the RSVP form; we will confirm availability, stops and times as soon as possible."] },
@@ -74,7 +74,7 @@ export const translations = {
       ],
     },
     guide: {
-      eyebrow: "Informations pratiques", title: "Quelques conseils pour", titleSecond: "survivre à la journée", intro: "Tout ce qu’il faut pour arriver à l’aise, élégant et suffisamment affamé.",
+      eyebrow: "Informations pratiques", title: "Quelques conseils", titleSecond: "", intro: "Tout ce qu’il faut pour arriver à l’aise, élégant et suffisamment affamé.",
       tips: [
         { title: "Où loger", text: ["Pour profiter plus facilement de l’éventuelle navette, le plus pratique est de séjourner à Mola di Bari, la ville de la mariée.", "Pour rester près des lieux du mariage, cherchez un hébergement à Castellana Grotte ou Alberobello. Monopoli est également une bonne option ; la Masseria Papaperta se trouve sur le territoire de Castellana Grotte, près d’Alberobello et à quelques kilomètres de Monopoli.", "Nous vous conseillons de réserver tôt : juillet est la haute saison dans les Pouilles."] },
         { title: "Navette éventuelle", text: ["Si les demandes sont suffisantes, nous organiserons une navette de Mola di Bari vers l’église San Michele Arcangelo, puis de l’église à la Masseria Papaperta, avec retour à Mola après la fête.", "La navette suivra cet itinéraire et ne pourra probablement pas desservir d’autres villes. Si vous logez ailleurs, prévoyez votre propre moyen de transport.", "Indiquez votre intérêt dans le formulaire RSVP ; nous confirmerons la disponibilité, les arrêts et les horaires dès que possible."] },

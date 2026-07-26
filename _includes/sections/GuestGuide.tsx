@@ -9,7 +9,10 @@ export function GuestGuide() {
     <section className="guestGuide section" id="consigli">
       <div className="sectionHeading guestGuideHeading">
         <p className="eyebrow">{t.guide.eyebrow}</p>
-        <h2>{t.guide.title}<br />{t.guide.titleSecond}</h2>
+        <h2>
+          {t.guide.title}
+          {t.guide.titleSecond && <><br />{t.guide.titleSecond}</>}
+        </h2>
         <p>{t.guide.intro}</p>
       </div>
       <div className="guestTips">
