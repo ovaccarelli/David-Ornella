@@ -10,7 +10,6 @@ export function Invitation() {
       <div className="invitationCollage">
         <div className="photoPair photoPairLeft" aria-hidden="true">
           <figure><img src="assets/images/1.jpg" alt="" /></figure>
-          <span className="goldenThread" />
           <figure><img src="assets/images/2.jpg" alt="" /></figure>
         </div>
         <div className="invitationCopy">
@@ -21,8 +20,7 @@ export function Invitation() {
         </div>
         <div className="photoPair photoPairRight" aria-hidden="true">
           <figure><img src="assets/images/3.jpg" alt="" /></figure>
-          <span className="goldenThread" />
-          <figure><img src="assets/images/4.jpg" alt="" /></figure>
+          <figure><img src="assets/images/4.png" alt="" /></figure>
         </div>
       </div>
     </section>
