@@ -87,10 +87,10 @@ button, input, select, textarea { font: inherit; }
   z-index: 1;
   margin: auto;
   text-align: center;
-  max-width: 850px;
-  padding: 80px 24px 120px;
+  width: min(980px, 88vw);
+  padding: 70px 24px 100px;
 }
-.heroContent .eyebrow, .heroContent h1, .heroIntro { visibility: hidden; }
+.heroContent .eyebrow { margin-bottom: 18px; text-shadow: 0 1px 12px rgba(255,253,248,.9); }
 .eyebrow {
   margin: 0 0 18px;
   color: var(--gold);
@@ -106,15 +106,17 @@ h1, h2, h3 {
   line-height: 1;
   margin: 0;
 }
-h1 { font-size: clamp(64px, 10vw, 138px); letter-spacing: -.04em; }
+h1 { font-size: clamp(64px, 9vw, 138px); letter-spacing: -.04em; }
 h1 em { display: inline-block; color: #d1a76d; font-weight: 400; font-size: .68em; margin: 0 .05em; }
-.heroIntro { max-width: 570px; margin: 28px auto 38px; color: rgba(255,255,255,.8); font-family: "Cormorant Garamond", serif; font-size: 21px; }
-.heroOrnament { display: flex; align-items: center; justify-content: center; gap: 14px; position: absolute; z-index: 2; top: 105px; width: 100%; font-size: 9px; letter-spacing: .25em; }
-.heroOrnament span { width: 50px; height: 1px; background: rgba(255,255,255,.45); }
+.heroContent h1 { color: #3f4930; text-shadow: 0 2px 18px rgba(255,253,248,.7); }
+.heroFlourish { display: flex; align-items: center; justify-content: center; gap: 16px; width: min(520px, 72vw); margin: 0 auto 24px; color: var(--gold); }
+.heroFlourish span { flex: 1; height: 1px; background: var(--gold); }
+.heroFlourish b { font: 400 25px/1 "Cormorant Garamond", serif; }
+.heroFlourishBottom { margin-top: 24px; margin-bottom: 0; }
 .roundLink { width: 74px; height: 74px; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(38,48,33,.4); border-radius: 50%; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; transition: background .25s, color .25s; }
 .roundLink b { font-size: 15px; margin-top: 2px; }
 .roundLink:hover { background: var(--deep); color: var(--ivory); }
-.heroDate { display: none; }
+.heroDate { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 9px 16px; margin: 28px auto 0; color: #916b31; font-size: clamp(11px, 1.05vw, 16px); font-weight: 500; letter-spacing: .17em; text-transform: uppercase; text-shadow: 0 1px 10px rgba(255,253,248,.9); }
 
 .section { padding: 120px max(6vw, 24px); }
 .invitation { text-align: center; background: var(--paper); }
@@ -191,21 +193,24 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
 
 @media (max-width: 800px) {
   .hero {
-    min-height: calc(144px + 52.34vw);
-    background-image: url("/assets/images/og.png");
-    background-size: 100% auto;
+    min-height: 100svh;
+    background-size: auto 100%;
     background-position: center bottom;
-    background-repeat: no-repeat;
     background-color: #efe2ca;
   }
   .hero::before, .hero::after { display: none; }
-  .heroOrnament, .heroContent { display: none; }
   .nav { flex-direction: column; gap: 15px; padding: 20px 18px; }
   .navLinks { width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px 18px; }
   .navLinks a { font-size: 8px; }
   .languagePicker span { display: none; }
-  h1 { line-height: .86; }
-  h1 em { display: block; margin: .08em 0; }
+  .heroContent { width: 100%; padding: 54px 20px 90px; }
+  .heroContent .eyebrow { font-size: 9px; }
+  .heroContent h1 { font-size: clamp(54px, 16vw, 92px); line-height: .82; }
+  .heroContent h1 em { display: block; margin: .12em 0; }
+  .heroFlourish { width: min(330px, 82vw); }
+  .heroDate { max-width: 340px; margin-top: 25px; font-size: clamp(12px, 3.4vw, 15px); line-height: 1.65; letter-spacing: .11em; }
+  .heroDate .dot { display: none; }
+  .heroDate span { width: 100%; }
   .section { padding: 88px 24px; }
   .countdownItem { padding: 20px 4px; }
   .countdownItem span { font-size: 7px; letter-spacing: .1em; }
@@ -219,7 +224,6 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
 }
 
 @media (max-width: 520px) {
-  .heroOrnament { top: 145px; }
   .heroContent { padding-left: 18px; padding-right: 18px; }
   .invitation h2, .rsvp h2, .sectionHeading h2 { font-size: 47px; }
   .rsvpForm { grid-template-columns: 1fr; }

@@ -1,5 +1,5 @@
 export const site = {
-  couple: "David & Ornella",
+  couple: "Ornella & David",
 };
 
 export const schedule = [
@@ -20,7 +20,7 @@ export const schedule = [
 export const weddingDate = "2027-07-17T17:00:00+02:00";
 
 export const giftDetails = {
-  accountHolder: "David & Ornella",
+  accountHolder: "Ornella & David",
   iban: "",
   bic: "",
 };

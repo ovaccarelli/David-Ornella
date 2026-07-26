@@ -19,7 +19,7 @@ test("renders the wedding site and its primary sections", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>David &amp; Ornella — 17 luglio 2027<\/title>/i);
+  assert.match(html, /<title>Ornella &amp; David — 17 luglio 2027<\/title>/i);
   assert.match(html, /David/);
   assert.match(html, /Ornella/);
   assert.doesNotMatch(html, /id="storia"|La nostra storia/);

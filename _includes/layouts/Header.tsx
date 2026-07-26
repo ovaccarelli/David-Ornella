@@ -17,7 +17,7 @@ export function Header() {
     <header className="hero" id="home">
       <nav className="nav" aria-label={t.hero.aria}>
         <a className="monogram" href="#home" aria-label={site.couple}>
-          D <i>&amp;</i> O
+          O <i>&amp;</i> D
         </a>
         <div className="navLinks">
           {navigation.map((item) => (
@@ -37,21 +37,14 @@ export function Header() {
           </label>
         </div>
       </nav>
-      <div className="heroOrnament" aria-hidden="true">
-        <span /><b>17 · 07 · 27</b><span />
-      </div>
       <div className="heroContent">
         <p className="eyebrow">{t.hero.married}</p>
-        <h1>David <em>&amp;</em> Ornella</h1>
-        <p className="heroIntro">
-          {t.hero.intro}
+        <div className="heroFlourish" aria-hidden="true"><span /><b>❧</b><span /></div>
+        <h1>Ornella <em>&amp;</em> David</h1>
+        <p className="heroDate">
+          <span>{t.hero.saturday} {t.date}</span><span className="dot">•</span><span>{t.location}</span>
         </p>
-        <a className="roundLink" href="#invito" aria-label={t.hero.discover}>
-          <span>{t.hero.discover}</span><b>↓</b>
-        </a>
-      </div>
-      <div className="heroDate">
-        <span>{t.hero.saturday} {t.date}</span><span className="dot">•</span><span>{t.location}</span>
+        <div className="heroFlourish heroFlourishBottom" aria-hidden="true"><span /><b>◇</b><span /></div>
       </div>
     </header>
   );

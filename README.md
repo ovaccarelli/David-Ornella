@@ -1,6 +1,6 @@
-# David & Ornella
+# Ornella & David
 
-Sito ufficiale del matrimonio di David e Ornella, 17 luglio 2027,
+Sito ufficiale del matrimonio di Ornella e David, 17 luglio 2027,
 Masseria Papaperta in Puglia.
 
 ## Organizzazione
