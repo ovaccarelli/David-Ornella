@@ -90,7 +90,12 @@ button, input, select, textarea { font: inherit; }
   width: min(980px, 88vw);
   padding: 70px 24px 100px;
 }
-.heroContent .eyebrow { margin-bottom: 18px; text-shadow: 0 1px 12px rgba(255,253,248,.9); }
+.heroContent .eyebrow {
+  margin-bottom: 18px;
+  font-size: clamp(12px, 1.05vw, 16px);
+  letter-spacing: .3em;
+  text-shadow: 0 1px 12px rgba(255,253,248,.9);
+}
 .eyebrow {
   margin: 0 0 18px;
   color: var(--gold);
@@ -237,7 +242,7 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
   .navLinks a { font-size: 8px; }
   .languagePicker span { display: none; }
   .heroContent { width: 100%; padding: 54px 20px 90px; }
-  .heroContent .eyebrow { font-size: 9px; }
+  .heroContent .eyebrow { font-size: clamp(12px, 3.4vw, 15px); }
   .heroContent h1 { font-size: clamp(54px, 16vw, 92px); line-height: .82; }
   .heroContent h1 em { display: block; margin: .12em 0; }
   .heroFlourish { width: min(330px, 82vw); }
