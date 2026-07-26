@@ -23,7 +23,7 @@ export const translations = {
       ],
     },
     rsvp: {
-      eyebrow: "Répondez s’il vous plaît", title: "Ci sarete?", intro: "Saremo felici di avervi con noi. Vi chiediamo di confermare la vostra presenza il prima possibile.",
+      eyebrow: "Répondez s’il vous plaît", title: "Ci sarete?", intro: "Saremo felici di avervi con noi. Vi chiediamo di confermare la vostra presenza il prima possibile.", changePlans: "Se i vostri programmi dovessero cambiare, scriveteci.",
       name: "Nome e cognome", namePlaceholder: "Il vostro nome", attending: "Parteciperete?", select: "Seleziona una risposta", yes: "Sì, con grande gioia", no: "Purtroppo non potrò esserci", adults: "Numero di adulti", children: "Numero di bambini (meno di 12 anni)", shuttle: "Navetta da Mola di Bari", shuttleYes: "Sì, sono interessato/a", shuttleNo: "No, mi organizzerò autonomamente", dietary: "Esigenze alimentari (allergie, preferenze)", message: "Eventuale messaggio per gli sposi", messagePlaceholder: "Scrivete qui il vostro messaggio", submit: "Invia la conferma", none: "Nessuna", subject: "RSVP matrimonio David & Ornella",
     },
     footer: { line: "Con amore, ci vediamo in Puglia.", gift: "Un pensiero per noi", contacts: "I nostri contatti", email: "Email", phone: "Telefono" },
@@ -53,7 +53,7 @@ export const translations = {
       ],
     },
     rsvp: {
-      eyebrow: "Please reply", title: "Will you join us?", intro: "We would be delighted to celebrate with you. Please confirm your attendance as soon as possible.",
+      eyebrow: "Please reply", title: "Will you join us?", intro: "We would be delighted to celebrate with you. Please confirm your attendance as soon as possible.", changePlans: "If your plans change, please get in touch with us.",
       name: "Full name", namePlaceholder: "Your name", attending: "Will you attend?", select: "Select an answer", yes: "Yes, with great joy", no: "Unfortunately, I cannot attend", adults: "Number of adults", children: "Number of children (under 12)", shuttle: "Shuttle from Mola di Bari", shuttleYes: "Yes, I’m interested", shuttleNo: "No, I’ll arrange my own transport", dietary: "Dietary requirements (allergies, preferences)", message: "Optional message for the couple", messagePlaceholder: "Write your message here", submit: "Send confirmation", none: "None", subject: "Wedding RSVP — David & Ornella",
     },
     footer: { line: "With love, see you in Puglia.", gift: "A gift for us", contacts: "Our contact details", email: "Email", phone: "Phone" },
@@ -83,7 +83,7 @@ export const translations = {
       ],
     },
     rsvp: {
-      eyebrow: "Répondez s’il vous plaît", title: "Serez-vous des nôtres ?", intro: "Nous serons ravis de vous compter parmi nous. Merci de confirmer votre présence dès que possible.",
+      eyebrow: "Répondez s’il vous plaît", title: "Serez-vous des nôtres ?", intro: "Nous serons ravis de vous compter parmi nous. Merci de confirmer votre présence dès que possible.", changePlans: "Si vos projets changent, n’hésitez pas à nous écrire.",
       name: "Nom et prénom", namePlaceholder: "Votre nom", attending: "Serez-vous présent ?", select: "Choisissez une réponse", yes: "Oui, avec grand plaisir", no: "Malheureusement, je ne pourrai pas venir", adults: "Nombre d’adultes", children: "Nombre d’enfants (moins de 12 ans)", shuttle: "Navette depuis Mola di Bari", shuttleYes: "Oui, cela m’intéresse", shuttleNo: "Non, je m’organiserai autrement", dietary: "Besoins alimentaires (allergies, préférences)", message: "Message éventuel pour les mariés", messagePlaceholder: "Écrivez votre message ici", submit: "Envoyer la confirmation", none: "Aucun", subject: "RSVP mariage David & Ornella",
     },
     footer: { line: "Avec amour, rendez-vous dans les Pouilles.", gift: "Une attention pour nous", contacts: "Nos coordonnées", email: "E-mail", phone: "Téléphone" },

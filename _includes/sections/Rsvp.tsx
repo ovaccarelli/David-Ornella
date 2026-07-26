@@ -10,7 +10,7 @@ export function Rsvp() {
       <div className="rsvpIntro">
         <p className="eyebrow">{t.rsvp.eyebrow}</p>
         <h2>{t.rsvp.title}</h2>
-        <p>{t.rsvp.intro}</p>
+        <p>{t.rsvp.intro} {t.rsvp.changePlans}</p>
       </div>
       <RsvpForm />
     </section>
