@@ -172,9 +172,11 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
 .giftLink { display: inline-block; margin-top: 24px; padding-bottom: 3px; border-bottom: 1px solid rgba(255,255,255,.5); color: var(--ivory); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
 .footerContacts { max-width: 620px; margin: 42px auto 0; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.16); }
 .footerContacts h2 { margin-bottom: 22px; color: #d8c49d; font: 400 23px/1 "Cormorant Garamond", serif; }
-.footerContacts address { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; font-style: normal; }
-.footerContacts address div { display: flex; flex-direction: column; gap: 5px; }
+.footerContacts address { font-style: normal; }
+.footerContacts address > div { display: grid; grid-template-columns: 90px 1.5fr 1fr; gap: 18px; align-items: center; padding: 8px 0; }
+.footerContacts .contactHead { padding-bottom: 3px; }
 .footerContacts span { margin-bottom: 5px; color: rgba(255,255,255,.45); font-size: 8px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.footerContacts strong { color: #d8c49d; font: 500 17px/1 "Cormorant Garamond", serif; text-align: left; }
 .footerContacts a { color: rgba(255,255,255,.82); font-size: 11px; letter-spacing: .03em; transition: color .2s; }
 .footerContacts a:hover { color: #d8c49d; }
 
@@ -227,7 +229,10 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
   .rsvpForm { grid-template-columns: 1fr; }
   .rsvpForm label, .rsvpForm .button { grid-column: 1; }
   .bankDetails div { grid-template-columns: 1fr; gap: 6px; }
-  .footerContacts address { grid-template-columns: 1fr; }
+  .footerContacts .contactHead { display: none; }
+  .footerContacts address > div { grid-template-columns: 1fr; gap: 3px; padding: 14px 0; }
+  .footerContacts .contactPerson + .contactPerson { border-top: 1px solid rgba(255,255,255,.1); }
+  .footerContacts strong { margin-bottom: 5px; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
