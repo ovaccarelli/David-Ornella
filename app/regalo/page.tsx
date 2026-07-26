@@ -1,7 +1,6 @@
 "use client";
 
 import { giftDetails } from "@/_data/site";
-import Link from "next/link";
 import { useLanguage } from "@/_includes/components/LanguageProvider";
 
 export default function GiftPage() {
@@ -10,7 +9,7 @@ export default function GiftPage() {
 
   return (
     <main className="giftPage">
-      <Link className="giftBack" href="/">← {t.gift.back}</Link>
+      <a className="giftBack" href="../">← {t.gift.back}</a>
       <section className="giftPanel">
         <p className="eyebrow">{t.gift.eyebrow}</p>
         <h1>{t.gift.title}<br />{t.gift.titleSecond}</h1>

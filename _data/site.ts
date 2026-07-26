@@ -5,13 +5,13 @@ export const site = {
 export const schedule = [
   {
     icon: "◇",
-    image: "/assets/images/chiesa-san-michele.png",
+    image: "assets/images/chiesa-san-michele.png",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Chiesa+San+Michele+in+Frangesto+Monopoli",
   },
   {
     icon: "✦",
-    image: "/assets/images/masseria-papaperta.jpg",
+    image: "assets/images/masseria-papaperta.jpg",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Masseria+Papaperta+Puglia",
   },

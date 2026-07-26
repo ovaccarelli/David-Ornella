@@ -3,7 +3,6 @@
 import { site } from "@/_data/site";
 import { Language } from "@/_data/translations";
 import { useLanguage } from "../components/LanguageProvider";
-import Link from "next/link";
 
 export function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -11,7 +10,7 @@ export function Header() {
     { label: t.nav.program, href: "#giornata" },
     { label: t.nav.tips, href: "#consigli" },
     { label: t.nav.rsvp, href: "#rsvp" },
-    { label: t.nav.gift, href: "/regalo" },
+    { label: t.nav.gift, href: "regalo/" },
   ];
 
   return (
@@ -22,7 +21,7 @@ export function Header() {
         </a>
         <div className="navLinks">
           {navigation.map((item) => (
-            <Link href={item.href} key={item.href}>{item.label}</Link>
+            <a href={item.href} key={item.href}>{item.label}</a>
           ))}
           <label className="languagePicker">
             <span>{t.language}</span>
