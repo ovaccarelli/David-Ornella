@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LanguageProvider } from "@/_includes/components/LanguageProvider";
 import "../assets/css/site.css";
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="it">
-      <body>{children}</body>
+      <body><LanguageProvider>{children}</LanguageProvider></body>
     </html>
   );
 }

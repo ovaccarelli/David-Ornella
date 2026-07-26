@@ -1,39 +1,46 @@
+"use client";
+
 import { schedule } from "@/_data/site";
+import { useLanguage } from "../components/LanguageProvider";
 
 export function Schedule() {
+  const { t } = useLanguage();
   return (
     <section className="schedule section" id="giornata">
       <div className="sectionHeading">
-        <p className="eyebrow">Il programma</p>
-        <h2>La giornata</h2>
-        <p>Gli orari definitivi saranno comunicati agli invitati più avanti.</p>
+        <p className="eyebrow">{t.schedule.eyebrow}</p>
+        <h2>{t.schedule.title}</h2>
+        <p>{t.schedule.note}</p>
       </div>
       <div className="timeline">
-        {schedule.map((item) => (
-          <article className={item.image ? "timelineFeatured" : undefined} key={item.title}>
+        {schedule.map((item, index) => {
+          const copy = t.schedule.items[index];
+          return (
+          <article className={item.image ? "timelineFeatured" : undefined} key={item.mapUrl}>
             {item.image && (
               <div
                 className="timelinePhoto"
                 role="img"
-                aria-label={item.imageAlt}
+                aria-label={copy.imageAlt}
                 style={{ backgroundImage: `url(${item.image})` }}
               />
             )}
-            <span className="time">{item.time}</span>
+            <span className="time">{t.schedule.time}</span>
             <div className="icon">{item.icon}</div>
-            <h3>{item.title}</h3>
-            <h4>{item.place}</h4>
-            <p>{item.description}</p>
+            <h3>{copy.title}</h3>
+            <h4>{copy.place}</h4>
+            <p>{copy.description}</p>
             <a
               className="button light scheduleMap"
               href={item.mapUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Apri su Google Maps ↗
+              {t.schedule.maps}
             </a>
           </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

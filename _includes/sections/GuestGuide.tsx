@@ -1,23 +1,28 @@
+"use client";
+
 import { guestTips } from "@/_data/site";
+import { useLanguage } from "../components/LanguageProvider";
 
 export function GuestGuide() {
+  const { t } = useLanguage();
   return (
     <section className="guestGuide section" id="consigli">
       <div className="sectionHeading guestGuideHeading">
-        <p className="eyebrow">Utilità per gli ospiti</p>
-        <h2>Qualche consiglio per<br />sopravvivere alla giornata</h2>
-        <p>Tutto quello che serve per arrivare comodi, eleganti e affamati al punto giusto.</p>
+        <p className="eyebrow">{t.guide.eyebrow}</p>
+        <h2>{t.guide.title}<br />{t.guide.titleSecond}</h2>
+        <p>{t.guide.intro}</p>
       </div>
       <div className="guestTips">
-        {guestTips.map((tip) => (
-          <article key={tip.title}>
+        {guestTips.map((tip, index) => {
+          const copy = t.guide.tips[index];
+          return <article key={copy.title}>
             <span className="guestTipIcon" aria-hidden="true">{tip.icon}</span>
-            <h3>{tip.title}</h3>
-            {tip.text.map((paragraph) => (
+            <h3>{copy.title}</h3>
+            {copy.text.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </article>
-        ))}
+          </article>;
+        })}
       </div>
     </section>
   );

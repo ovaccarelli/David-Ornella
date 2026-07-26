@@ -1,15 +1,16 @@
+"use client";
+
 import { RsvpForm } from "../components/RsvpForm";
+import { useLanguage } from "../components/LanguageProvider";
 
 export function Rsvp() {
+  const { t } = useLanguage();
   return (
     <section className="rsvp section" id="rsvp">
       <div className="rsvpIntro">
-        <p className="eyebrow">Répondez s&apos;il vous plaît</p>
-        <h2>Ci sarete?</h2>
-        <p>
-          Saremo felici di avervi con noi. Vi chiediamo di confermare la vostra presenza entro
-          il <strong> 17 maggio 2027</strong>.
-        </p>
+        <p className="eyebrow">{t.rsvp.eyebrow}</p>
+        <h2>{t.rsvp.title}</h2>
+        <p>{t.rsvp.intro}</p>
       </div>
       <RsvpForm />
     </section>

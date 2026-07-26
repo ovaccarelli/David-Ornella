@@ -1,13 +1,16 @@
-import { site } from "@/_data/site";
+"use client";
+
+import { useLanguage } from "../components/LanguageProvider";
 import Link from "next/link";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer>
       <div className="footerMonogram">D <i>&amp;</i> O</div>
-      <p>{site.date} · Masseria Papaperta</p>
-      <p className="footerLine">Con amore, ci vediamo in Puglia.</p>
-      <Link className="giftLink" href="/regalo">Un pensiero per noi</Link>
+      <p>{t.date} · Masseria Papaperta</p>
+      <p className="footerLine">{t.footer.line}</p>
+      <Link className="giftLink" href="/regalo">{t.footer.gift}</Link>
     </footer>
   );
 }

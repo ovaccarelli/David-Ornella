@@ -1,18 +1,21 @@
 "use client";
 
 import { FormEvent } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 export function RsvpForm() {
+  const { t } = useLanguage();
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = "RSVP matrimonio David & Ornella";
+    const subject = t.rsvp.subject;
     const body = [
-      `Nome e cognome: ${form.get("name")}`,
-      `Partecipazione: ${form.get("attendance")}`,
-      `Numero di ospiti: ${form.get("guests")}`,
-      `Navetta da Mola di Bari: ${form.get("transport")}`,
-      `Esigenze alimentari: ${form.get("diet") || "Nessuna"}`,
+      `${t.rsvp.name}: ${form.get("name")}`,
+      `${t.rsvp.attending}: ${form.get("attendance")}`,
+      `${t.rsvp.adults}: ${form.get("adults")}`,
+      `${t.rsvp.children}: ${form.get("children")}`,
+      `${t.rsvp.shuttle}: ${form.get("transport")}`,
+      `${t.rsvp.dietary}: ${form.get("diet") || t.rsvp.none}`,
     ].join("\n");
 
     window.location.href =
@@ -23,34 +26,38 @@ export function RsvpForm() {
   return (
     <form className="rsvpForm" onSubmit={handleSubmit}>
       <label>
-        Nome e cognome
-        <input name="name" type="text" placeholder="Il vostro nome" required />
+        {t.rsvp.name}
+        <input name="name" type="text" placeholder={t.rsvp.namePlaceholder} required />
       </label>
       <label>
-        Parteciperete?
+        {t.rsvp.attending}
         <select name="attendance" defaultValue="" required>
-          <option value="" disabled>Seleziona una risposta</option>
-          <option>Sì, con grande gioia</option>
-          <option>Purtroppo non potrò esserci</option>
+          <option value="" disabled>{t.rsvp.select}</option>
+          <option>{t.rsvp.yes}</option>
+          <option>{t.rsvp.no}</option>
         </select>
       </label>
       <label>
-        Numero di ospiti
-        <input name="guests" type="number" min="1" max="8" defaultValue="1" required />
+        {t.rsvp.adults}
+        <input name="adults" type="number" min="1" max="8" defaultValue="1" required />
       </label>
       <label>
-        Navetta da Mola di Bari
+        {t.rsvp.children}
+        <input name="children" type="number" min="0" max="8" defaultValue="0" required />
+      </label>
+      <label>
+        {t.rsvp.shuttle}
         <select name="transport" defaultValue="" required>
-          <option value="" disabled>Seleziona una risposta</option>
-          <option>Sì, sono interessato/a</option>
-          <option>No, mi organizzerò autonomamente</option>
+          <option value="" disabled>{t.rsvp.select}</option>
+          <option>{t.rsvp.shuttleYes}</option>
+          <option>{t.rsvp.shuttleNo}</option>
         </select>
       </label>
       <label>
-        Esigenze alimentari
-        <textarea name="diet" placeholder="Allergie, intolleranze o preferenze" rows={3} />
+        {t.rsvp.dietary}
+        <textarea name="diet" rows={1} />
       </label>
-      <button className="button" type="submit">Invia la conferma</button>
+      <button className="button" type="submit">{t.rsvp.submit}</button>
     </form>
   );
 }

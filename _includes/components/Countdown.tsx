@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { weddingDate } from "@/_data/site";
-
-const labels = { days: "giorni", hours: "ore", minutes: "minuti", seconds: "secondi" };
+import { useLanguage } from "./LanguageProvider";
 
 export function Countdown() {
+  const { t } = useLanguage();
   const [remaining, setRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -24,11 +24,11 @@ export function Countdown() {
   }, []);
 
   return (
-    <div className="countdown" aria-label="Conto alla rovescia">
+    <div className="countdown" aria-label={t.invitation.countdown}>
       {Object.entries(remaining).map(([label, value]) => (
         <div className="countdownItem" key={label}>
           <strong>{String(value).padStart(2, "0")}</strong>
-          <span>{labels[label as keyof typeof labels]}</span>
+          <span>{t.invitation.units[label as keyof typeof t.invitation.units]}</span>
         </div>
       ))}
     </div>

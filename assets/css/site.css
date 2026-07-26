@@ -69,6 +69,19 @@ button, input, select, textarea { font: inherit; }
 .navLinks { display: flex; align-items: center; gap: 32px; }
 .navLinks a { padding-bottom: 3px; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
 .navLinks a:hover { color: var(--gold); border-color: currentColor; }
+.languagePicker { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.languagePicker span { color: rgba(38,48,33,.65); font-size: 8px; }
+.languagePicker select {
+  width: auto;
+  min-width: 82px;
+  padding: 3px 18px 3px 2px;
+  border-bottom-color: rgba(38,48,33,.35);
+  color: var(--deep);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: none;
+  cursor: pointer;
+}
 .heroContent {
   position: relative;
   z-index: 1;
@@ -147,7 +160,7 @@ h1 em { display: inline-block; color: #d1a76d; font-weight: 400; font-size: .68e
 .rsvpIntro > p:last-child { max-width: 430px; color: #666153; margin-top: 30px; }
 .rsvpForm { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
 .rsvpForm label { display: flex; flex-direction: column; gap: 8px; text-transform: uppercase; letter-spacing: .13em; font-size: 9px; font-weight: 600; }
-.rsvpForm label:nth-child(5), .rsvpForm .button { grid-column: 1 / -1; }
+.rsvpForm .button { grid-column: 1 / -1; }
 input, select, textarea { width: 100%; border: 0; border-bottom: 1px solid #bcb4a5; border-radius: 0; padding: 11px 2px; background: transparent; color: var(--ink); outline: none; }
 input:focus, select:focus, textarea:focus { border-color: var(--gold); }
 textarea { resize: vertical; }
@@ -180,6 +193,7 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
   .nav { flex-direction: column; gap: 15px; padding: 20px 18px; }
   .navLinks { width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px 18px; }
   .navLinks a { font-size: 8px; }
+  .languagePicker span { display: none; }
   .heroContent { padding-top: 150px; }
   h1 { line-height: .86; }
   h1 em { display: block; margin: .08em 0; }
