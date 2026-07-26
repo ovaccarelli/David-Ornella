@@ -154,6 +154,8 @@ h1 em { display: inline-block; color: #d1a76d; font-weight: 400; font-size: .68e
 .guestTips h3 { color: var(--olive); font-size: 36px; margin-bottom: 24px; }
 .guestTips p { margin: 0 0 15px; color: #665f52; font-size: 13px; }
 .guestTips p:last-child { margin-bottom: 0; }
+.guestTips p a { color: var(--olive); font-weight: 600; text-decoration: underline; text-decoration-color: rgba(75,86,57,.38); text-underline-offset: 3px; transition: color .2s, text-decoration-color .2s; }
+.guestTips p a:hover { color: var(--gold); text-decoration-color: currentColor; }
 
 .rsvp { display: grid; grid-template-columns: .8fr 1.2fr; gap: 10vw; background: var(--paper); }
 .rsvpIntro { padding-top: 20px; }

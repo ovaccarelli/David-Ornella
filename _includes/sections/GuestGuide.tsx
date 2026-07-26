@@ -3,6 +3,36 @@
 import { guestTips } from "@/_data/site";
 import { useLanguage } from "../components/LanguageProvider";
 
+const mapLinks: Record<string, string> = {
+  "Mola di Bari": "https://www.google.com/maps/search/?api=1&query=Mola+di+Bari",
+  "Castellana Grotte": "https://www.google.com/maps/search/?api=1&query=Castellana+Grotte",
+  Alberobello: "https://www.google.com/maps/search/?api=1&query=Alberobello",
+  Monopoli: "https://www.google.com/maps/search/?api=1&query=Monopoli+Puglia",
+};
+
+const rsvpLabels = new Set(["modulo RSVP", "RSVP form", "formulaire RSVP"]);
+const linkedTerms = /(Mola di Bari|Castellana Grotte|Alberobello|Monopoli|modulo RSVP|RSVP form|formulaire RSVP)/g;
+
+function LinkedParagraph({ text }: { text: string }) {
+  return (
+    <p>
+      {text.split(linkedTerms).map((part, index) => {
+        if (rsvpLabels.has(part)) {
+          return <a href="#rsvp" key={`${part}-${index}`}>{part}</a>;
+        }
+        if (mapLinks[part]) {
+          return (
+            <a href={mapLinks[part]} target="_blank" rel="noreferrer" key={`${part}-${index}`}>
+              {part}
+            </a>
+          );
+        }
+        return part;
+      })}
+    </p>
+  );
+}
+
 export function GuestGuide() {
   const { t } = useLanguage();
   return (
@@ -22,7 +52,7 @@ export function GuestGuide() {
             <span className="guestTipIcon" aria-hidden="true">{tip.icon}</span>
             <h3>{copy.title}</h3>
             {copy.text.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <LinkedParagraph text={paragraph} key={paragraph} />
             ))}
           </article>;
         })}
