@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "David & Ornella — 17 luglio 2027",
   description:
     "David e Ornella si sposano il 17 luglio 2027 a Masseria Papaperta, in Puglia.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
   openGraph: {
     title: "David & Ornella — 17 luglio 2027",
     description: "Una sera d'estate nel cuore della Puglia.",
