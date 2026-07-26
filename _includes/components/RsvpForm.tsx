@@ -18,6 +18,25 @@ type SubmissionStatus =
   | "success"
   | "error";
 
+function isTrustedGoogleOrigin(origin: string) {
+  try {
+    const url = new URL(origin);
+
+    return (
+      url.protocol === "https:" &&
+      (
+        url.hostname === "script.google.com" ||
+        url.hostname === "script.googleusercontent.com" ||
+        url.hostname.endsWith(
+          "-script.googleusercontent.com",
+        )
+      )
+    );
+  } catch {
+    return false;
+  }
+}
+
 export function RsvpForm() {
   const { t } = useLanguage();
 
@@ -32,6 +51,9 @@ export function RsvpForm() {
   const [status, setStatus] =
     useState<SubmissionStatus>("idle");
 
+  const [errors, setErrors] =
+    useState<Record<string, string>>({});
+
   const iframeRef =
     useRef<HTMLIFrameElement>(null);
 
@@ -44,15 +66,14 @@ export function RsvpForm() {
     function handleMessage(
       event: MessageEvent,
     ) {
-      /*
-       * Accepter uniquement le message
-       * provenant de l’iframe du formulaire.
-       */
       if (
-        event.source !==
-          iframeRef.current?.contentWindow ||
+        !isTrustedGoogleOrigin(
+          event.origin,
+        ) ||
         event.data?.type !==
-          "RSVP_RESULT"
+          "RSVP_RESULT" ||
+        typeof event.data?.ok !==
+          "boolean"
       ) {
         return;
       }
@@ -92,13 +113,63 @@ export function RsvpForm() {
   function handleSubmit(
     event: FormEvent<HTMLFormElement>,
   ) {
-    /*
-     * Ne pas utiliser preventDefault :
-     * le formulaire doit réellement être envoyé
-     * à Apps Script.
-     */
     const formData =
       new FormData(event.currentTarget);
+    const nextErrors:
+      Record<string, string> = {};
+    const adults = Number(
+      formData.get("adults"),
+    );
+    const children = Number(
+      formData.get("children"),
+    );
+
+    if (
+      !String(
+        formData.get("name") || "",
+      ).trim()
+    ) {
+      nextErrors.name =
+        t.rsvp.required;
+    }
+
+    if (!attendance) {
+      nextErrors.attendance =
+        t.rsvp.choose;
+    }
+
+    if (attendance === "yes") {
+      if (
+        !Number.isInteger(adults) ||
+        adults < 1
+      ) {
+        nextErrors.adults =
+          t.rsvp.validNumber;
+      }
+
+      if (
+        !Number.isInteger(children) ||
+        children < 0
+      ) {
+        nextErrors.children =
+          t.rsvp.validNumber;
+      }
+
+      if (!formData.get("transport")) {
+        nextErrors.transport =
+          t.rsvp.choose;
+      }
+    }
+
+    if (
+      Object.keys(nextErrors).length
+    ) {
+      event.preventDefault();
+      setErrors(nextErrors);
+      return;
+    }
+
+    setErrors({});
 
     setSubmittedAttendance(
       String(
@@ -170,6 +241,7 @@ export function RsvpForm() {
         method="POST"
         target="rsvp-submit-frame"
         onSubmit={handleSubmit}
+        noValidate
       >
         {/*
          * Champ invisible antispam.
@@ -201,8 +273,21 @@ export function RsvpForm() {
               t.rsvp.namePlaceholder
             }
             autoComplete="name"
-            required
+            aria-invalid={
+              Boolean(errors.name)
+            }
+            onInput={() => {
+              setErrors((current) => ({
+                ...current,
+                name: "",
+              }));
+            }}
           />
+          {errors.name && (
+            <span className="fieldError">
+              {errors.name}
+            </span>
+          )}
         </label>
 
         <label>
@@ -215,8 +300,16 @@ export function RsvpForm() {
               setAttendance(
                 event.target.value,
               );
+              setErrors((current) => ({
+                ...current,
+                attendance: "",
+              }));
             }}
-            required
+            aria-invalid={
+              Boolean(
+                errors.attendance,
+              )
+            }
           >
             <option
               value=""
@@ -233,6 +326,11 @@ export function RsvpForm() {
               {t.rsvp.no}
             </option>
           </select>
+          {errors.attendance && (
+            <span className="fieldError">
+              {errors.attendance}
+            </span>
+          )}
         </label>
 
         {attendance === "yes" && (
@@ -246,8 +344,25 @@ export function RsvpForm() {
                 min="1"
                 max="8"
                 defaultValue="1"
-                required
+                aria-invalid={
+                  Boolean(
+                    errors.adults,
+                  )
+                }
+                onInput={() => {
+                  setErrors(
+                    (current) => ({
+                      ...current,
+                      adults: "",
+                    }),
+                  );
+                }}
               />
+              {errors.adults && (
+                <span className="fieldError">
+                  {errors.adults}
+                </span>
+              )}
             </label>
 
             <label>
@@ -259,8 +374,25 @@ export function RsvpForm() {
                 min="0"
                 max="8"
                 defaultValue="0"
-                required
+                aria-invalid={
+                  Boolean(
+                    errors.children,
+                  )
+                }
+                onInput={() => {
+                  setErrors(
+                    (current) => ({
+                      ...current,
+                      children: "",
+                    }),
+                  );
+                }}
               />
+              {errors.children && (
+                <span className="fieldError">
+                  {errors.children}
+                </span>
+              )}
             </label>
 
             <label>
@@ -269,7 +401,19 @@ export function RsvpForm() {
               <select
                 name="transport"
                 defaultValue=""
-                required
+                aria-invalid={
+                  Boolean(
+                    errors.transport,
+                  )
+                }
+                onChange={() => {
+                  setErrors(
+                    (current) => ({
+                      ...current,
+                      transport: "",
+                    }),
+                  );
+                }}
               >
                 <option
                   value=""
@@ -286,6 +430,11 @@ export function RsvpForm() {
                   {t.rsvp.shuttleNo}
                 </option>
               </select>
+              {errors.transport && (
+                <span className="fieldError">
+                  {errors.transport}
+                </span>
+              )}
             </label>
 
             <label>
