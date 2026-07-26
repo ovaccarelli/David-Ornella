@@ -175,15 +175,6 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
 .footerMonogram { font-size: 38px; margin-bottom: 18px; }
 .footerLine { font-family: "Cormorant Garamond", serif; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 17px; color: #d8c49d; }
 .giftLink { display: inline-block; margin-top: 24px; padding-bottom: 3px; border-bottom: 1px solid rgba(255,255,255,.5); color: var(--ivory); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
-.footerContacts { max-width: 620px; margin: 42px auto 0; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.16); }
-.footerContacts h2 { margin-bottom: 22px; color: #d8c49d; font: 400 23px/1 "Cormorant Garamond", serif; }
-.footerContacts address { font-style: normal; }
-.footerContacts address > div { display: grid; grid-template-columns: 90px 1.5fr 1fr; gap: 18px; align-items: center; padding: 8px 0; }
-.footerContacts .contactHead { padding-bottom: 3px; }
-.footerContacts span { margin-bottom: 5px; color: rgba(255,255,255,.45); font-size: 8px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
-.footerContacts strong { color: #d8c49d; font: 500 17px/1 "Cormorant Garamond", serif; text-align: left; }
-.footerContacts a { color: rgba(255,255,255,.82); font-size: 11px; letter-spacing: .03em; transition: color .2s; }
-.footerContacts a:hover { color: #d8c49d; }
 
 .giftPage { min-height: 100svh; display: grid; place-items: center; position: relative; padding: 100px 24px; background: linear-gradient(rgba(255,253,248,.88), rgba(239,230,214,.9)), url("/assets/images/og.png") center/cover fixed; }
 .giftBack { position: absolute; top: 30px; left: max(24px, 4vw); color: var(--olive); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
@@ -234,10 +225,6 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
   .rsvpForm { grid-template-columns: 1fr; }
   .rsvpForm label, .rsvpForm .button { grid-column: 1; }
   .bankDetails div { grid-template-columns: 1fr; gap: 6px; }
-  .footerContacts .contactHead { display: none; }
-  .footerContacts address > div { grid-template-columns: 1fr; gap: 3px; padding: 14px 0; }
-  .footerContacts .contactPerson + .contactPerson { border-top: 1px solid rgba(255,255,255,.1); }
-  .footerContacts strong { margin-bottom: 5px; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
