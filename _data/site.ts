@@ -27,15 +27,15 @@ export const giftDetails = {
 
 export const guestTips = [
   {
-    icon: "☀",
-  },
-  {
-    icon: "♢",
-  },
-  {
     icon: "⌂",
   },
   {
     icon: "↝",
+  },
+  {
+    icon: "☀",
+  },
+  {
+    icon: "♢",
   },
 ];
