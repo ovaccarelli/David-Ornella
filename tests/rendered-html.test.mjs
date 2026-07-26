@@ -26,7 +26,28 @@ test("renders the wedding site and its primary sections", async () => {
   assert.match(html, /id="giornata"/);
   assert.match(html, /Chiesetta San Michele Arcangelo/);
   assert.match(html, /Orario da definire/);
-  assert.match(html, /id="luogo"/);
+  assert.doesNotMatch(html, /id="luogo"|La location/);
+  assert.match(html, /Cena &amp; festa/);
+  assert.match(html, /Google Maps/);
+  assert.match(html, /id="consigli"/);
+  assert.match(html, /Abbigliamento consigliato/);
+  assert.match(html, /Possibile navetta/);
   assert.match(html, /id="rsvp"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
+});
+
+test("renders the separate gift page", async () => {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("gift-test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+  const response = await worker.fetch(
+    new Request("http://localhost/regalo", { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Un pensiero per noi/);
+  assert.match(html, /coordinate bancarie/i);
 });

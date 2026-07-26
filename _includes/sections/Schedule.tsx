@@ -15,7 +15,7 @@ export function Schedule() {
               <div
                 className="timelinePhoto"
                 role="img"
-                aria-label="Facciata della Chiesetta San Michele Arcangelo in Frangesto"
+                aria-label={item.imageAlt}
                 style={{ backgroundImage: `url(${item.image})` }}
               />
             )}
@@ -24,6 +24,14 @@ export function Schedule() {
             <h3>{item.title}</h3>
             <h4>{item.place}</h4>
             <p>{item.description}</p>
+            <a
+              className="button light scheduleMap"
+              href={item.mapUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Apri su Google Maps ↗
+            </a>
           </article>
         ))}
       </div>

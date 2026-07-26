@@ -1,4 +1,5 @@
 import { navigation, site } from "@/_data/site";
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -9,10 +10,9 @@ export function Header() {
         </a>
         <div className="navLinks">
           {navigation.map((item) => (
-            <a href={item.href} key={item.href}>{item.label}</a>
+            <Link href={item.href} key={item.href}>{item.label}</Link>
           ))}
         </div>
-        <a className="navRsvp" href="#rsvp">RSVP</a>
       </nav>
       <div className="heroOrnament" aria-hidden="true">
         <span /><b>17 · 07 · 27</b><span />

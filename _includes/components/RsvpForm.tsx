@@ -1,24 +1,23 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 
 export function RsvpForm() {
-  const [sent, setSent] = useState(false);
-
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
-  }
+    const form = new FormData(event.currentTarget);
+    const subject = "RSVP matrimonio David & Ornella";
+    const body = [
+      `Nome e cognome: ${form.get("name")}`,
+      `Partecipazione: ${form.get("attendance")}`,
+      `Numero di ospiti: ${form.get("guests")}`,
+      `Navetta da Mola di Bari: ${form.get("transport")}`,
+      `Esigenze alimentari: ${form.get("diet") || "Nessuna"}`,
+    ].join("\n");
 
-  if (sent) {
-    return (
-      <div className="thanks" role="status">
-        <span>✦</span>
-        <h3>Grazie!</h3>
-        <p>La vostra risposta è stata preparata. Non vediamo l&apos;ora di festeggiare insieme.</p>
-        <button className="textButton" onClick={() => setSent(false)}>Modifica risposta</button>
-      </div>
-    );
+    window.location.href =
+      `mailto:o.vaccarelli@gmail.com?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -40,11 +39,18 @@ export function RsvpForm() {
         <input name="guests" type="number" min="1" max="8" defaultValue="1" required />
       </label>
       <label>
+        Navetta da Mola di Bari
+        <select name="transport" defaultValue="" required>
+          <option value="" disabled>Seleziona una risposta</option>
+          <option>Sì, sono interessato/a</option>
+          <option>No, mi organizzerò autonomamente</option>
+        </select>
+      </label>
+      <label>
         Esigenze alimentari
         <textarea name="diet" placeholder="Allergie, intolleranze o preferenze" rows={3} />
       </label>
       <button className="button" type="submit">Invia la conferma</button>
-      <p className="formNote">Il modulo è una demo: prima dell&apos;invio degli inviti potremo collegarlo alla vostra email.</p>
     </form>
   );
 }
