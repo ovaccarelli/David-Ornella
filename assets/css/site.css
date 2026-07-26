@@ -186,15 +186,19 @@ footer p { margin: 7px 0; font-size: 9px; letter-spacing: .18em; text-transform:
 
 @media (max-width: 800px) {
   .hero {
-    min-height: 72svh;
-    background-size: auto 100%;
+    min-height: calc(144px + 52.34vw);
+    background-image: url("/assets/images/og.png");
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
     background-color: #efe2ca;
   }
+  .hero::before, .hero::after { display: none; }
+  .heroOrnament, .heroContent { display: none; }
   .nav { flex-direction: column; gap: 15px; padding: 20px 18px; }
   .navLinks { width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px 18px; }
   .navLinks a { font-size: 8px; }
   .languagePicker span { display: none; }
-  .heroContent { padding-top: 150px; }
   h1 { line-height: .86; }
   h1 em { display: block; margin: .08em 0; }
   .section { padding: 88px 24px; }
